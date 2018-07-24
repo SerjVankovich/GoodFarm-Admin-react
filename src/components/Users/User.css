@@ -1,0 +1,10 @@
+.user-card {
+    margin-top: 20px;
+    background-color: rgb(123, 199, 241);
+}
+
+.bold-text {
+    font-weight: bold;
+    display: inline-block;
+    align-content: right;
+}

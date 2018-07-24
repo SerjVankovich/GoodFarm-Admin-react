@@ -1,0 +1,16 @@
+.btn-completed {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: 0em;
+    cursor: pointer;
+    padding: 10px 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    color: rgba(255,255,255,0.9);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #FFCA28;
+}
