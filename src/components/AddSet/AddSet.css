@@ -1,0 +1,25 @@
+.center {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.picture {
+    border-radius: 2em;
+    margin: 1em;
+}
+
+.addBtn {
+    margin: 1em;
+}
+
+.addItemBtn {
+    margin: 1em auto auto;
+    background-color: #FFCA28;
+    display: flex;
+    border-radius: 3em;
+    border: none;
+}
+
+.addItemBtn:hover {
+    background-color: #ffaa2d;
+}

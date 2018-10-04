@@ -52,7 +52,7 @@ class Orders extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({loading: true})
+    this.setState({loading: true});
 
     const options = {
       method: "GET",
@@ -62,7 +62,7 @@ class Orders extends React.Component {
     };
 
     fetch(API + "users", options)
-      .then(response => response.json())
+      .then(response => response.ok ? response.json() : Promise.reject(response))
       .then(body => {
         this.setState({
           orders: this.formatOrders(body),
@@ -70,7 +70,7 @@ class Orders extends React.Component {
         });
       })
       .catch(err => {
-        console.log(err);
+        this.props.history.push({pathname: '/fail', state: {error: err.message, backTo: '/orders'}})
       });
   }
 

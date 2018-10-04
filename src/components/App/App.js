@@ -29,7 +29,7 @@ class App extends Component {
       </li>
     </ul>
         <span className="navbar-text">
-          <Link className="nav-link" to="/login" >Log in</Link>
+          <Link className="nav-link" to="/addSet" >Добавить набор</Link>
         </span>
       </div>
       </nav>
