@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43f92036-bbfd-490a-88ff-428dd6c87069" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/clearFunctions/clearFunctions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddSet/AddSet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddSet/AddSet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Fail/Fail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Fail/Fail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Item/Item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Item/Item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Orders/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Orders/orders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddMilk/AddMilk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddMilk/AddMilk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SuccesAdd/SuccessAdd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SuccesAdd/SuccessAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,33 +27,36 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="4" />
-          <entry key="js" value="11" />
+          <entry key="css" value="7" />
+          <entry key="js" value="14" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
+          <entry key="CSS" value="7" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JavaScript" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="159" />
-          <entry key="js" value="2706" />
+          <entry key="dummy" value="1" />
+          <entry key="js" value="4358" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="159" />
-          <entry key="JavaScript" value="2706" />
+          <entry key="JavaScript" value="4358" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -68,64 +65,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2652">
-              <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+            <state relative-caret-position="156">
+              <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AddMilk/AddMilk.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="148" column="23" lean-forward="true" selection-end-line="148" selection-end-column="23" />
               <folding>
-                <element signature="e#0#80#0" expanded="true" />
+                <element signature="e#0#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Orders/orders.js">
+        <entry file="file://$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="72" column="100" lean-forward="true" selection-start-line="72" selection-start-column="100" selection-end-line="72" selection-end-column="100" />
+            <state relative-caret-position="312">
+              <caret line="93" column="43" lean-forward="true" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/clearFunctions/clearFunctions.js">
+        <entry file="file://$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="312">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.js">
+        <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Item/Item.js">
+        <entry file="file://$PROJECT_DIR$/src/components/AddMilk/AddMilk.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -139,10 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-263">
+            <state relative-caret-position="309">
+              <caret line="79" column="88" lean-forward="true" selection-start-line="79" selection-start-column="88" selection-end-line="79" selection-end-column="88" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -162,9 +158,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.js">
+        <entry file="file://$PROJECT_DIR$/src/components/SuccesAdd/SuccessAdd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="260">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -177,8 +174,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -202,6 +199,13 @@
         <option value="$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.js" />
         <option value="$PROJECT_DIR$/src/components/AddSet/AddSet.js" />
         <option value="$PROJECT_DIR$/src/components/Orders/orders.js" />
+        <option value="$PROJECT_DIR$/src/components/AddMilk/AddMilk.css" />
+        <option value="$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.css" />
+        <option value="$PROJECT_DIR$/src/components/AddMilk/AddMilk.js" />
+        <option value="$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.js" />
+        <option value="$PROJECT_DIR$/src/components/SuccesAdd/SuccessAddSet.js" />
+        <option value="$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
   </component>
@@ -255,7 +259,21 @@
               <item name="good-farm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddMilk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="good-farm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="good-farm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="AddSet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="good-farm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="good-farm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddSimpleProduct" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="good-farm" type="b2602c69:ProjectViewProjectNode" />
@@ -270,6 +288,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Orders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="good-farm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="good-farm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="SuccesAdd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,21 +334,23 @@
       <workItem from="1537509907827" duration="79000" />
       <workItem from="1538199668781" duration="7624000" />
       <workItem from="1538636742992" duration="2162000" />
+      <workItem from="1538709718463" duration="3957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9865000" />
+    <option name="totallyTimeSpent" value="13822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -356,17 +383,57 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FailAddSet/FailAddSet.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/globalCSS.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Orders/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="72" column="100" lean-forward="true" selection-start-line="72" selection-start-column="100" selection-end-line="72" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clearFunctions/clearFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Item/Item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Item/Item.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -379,77 +446,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SuccesAddSet/SuccessAddSet.js">
+    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+          <caret selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clearFunctions/clearFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Item/Item.css">
+    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Item/Item.js">
+    <entry file="file://$PROJECT_DIR$/src/components/AddMilk/AddMilk.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        <state>
+          <caret selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddMilk/AddMilk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="148" column="23" lean-forward="true" selection-end-line="148" selection-end-column="23" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddItem/AddItem.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SuccesAdd/SuccessAdd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Orders/orders.js">
+    <entry file="file://$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="72" column="100" lean-forward="true" selection-start-line="72" selection-start-column="100" selection-end-line="72" selection-end-column="100" />
+        <state relative-caret-position="312">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddSimpleProduct/AddSimpleProduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="93" column="43" lean-forward="true" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
+        <state relative-caret-position="309">
+          <caret line="79" column="88" lean-forward="true" selection-start-line="79" selection-start-column="88" selection-end-line="79" selection-end-column="88" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddSet/AddSet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2652">
-          <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#80#0" expanded="true" />
           </folding>
         </state>
       </provider>

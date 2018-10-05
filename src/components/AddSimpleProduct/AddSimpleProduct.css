@@ -1,0 +1,13 @@
+.center {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.picture {
+    border-radius: 2em;
+    margin: 1em;
+}
+
+.addBtn {
+    margin: 1em;
+}
