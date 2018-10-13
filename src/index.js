@@ -8,9 +8,11 @@ import HomePage from './components/HomePage/HomePage';
 import Users from './components/Users/users';
 import AddSet from "./components/AddSet/AddSet";
 import "bootstrap/dist/css/bootstrap-grid.min.css"
-import SuccessAdd from "./components/SuccesAdd/SuccessAdd";
+import SuccessAdd from "./components/SuccessAdd/SuccessAdd";
 import Fail from "./components/Fail/Fail";
 import AddSimpleProduct from "./components/AddSimpleProduct/AddSimpleProduct";
+import ManageSets from "./components/ManageSets/ManageSets";
+import SetCard from "./components/ManageSets/SetCard/SetCard";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -79,7 +81,40 @@ ReactDOM.render(
                                               link="/addMilk"
                                               addMore="Добавить ещё молочный продукт"/>}
             />
-            /* TODO paths: "/successAddMeat", "/successAddBread", "/successAddVegFruits"*/
+            <Route path="/successAddMeat"
+                   component={
+                       (props) => <SuccessAdd {...props}
+                                              title="Мясной или рыбный продукт успешно добавлен"
+                                              link="/addMeat"
+                                              addMore="Добавить ещё мясной или рыбный продукт"/>
+                   }
+            />
+
+            <Route path="/successAddBread"
+                   component={
+                       (props) => <SuccessAdd {...props}
+                                              title="Хлебный продукт успешно добавлен"
+                                              link="/addBread"
+                                              addMore="Добавить ещё хлебный продукт"/>
+                   }
+            />
+
+            <Route path="/successAddVegFruits"
+                   component={
+                       (props) => <SuccessAdd {...props}
+                                              title="Растительный продукт успешно добавлен"
+                                              link="/addVegFruits"
+                                              addMore="Добавить ещё растительный продукт"/>
+                   }
+            />
+
+            <Route path="/manageSets"
+                   component={
+                       (props) => <ManageSets {...props}
+                                              component={SetCard}
+                                              url="sets" />
+                   }
+            />
         </Switch>
         </div>
 

@@ -1,0 +1,124 @@
+.panel {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.set-box-title {
+    color: #aaaaaa;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.set-box-name {
+    text-align: center;
+    margin-bottom: 11px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.set-box-image {
+    display: block;
+    margin: auto;
+    text-align: center;
+    height: 188px;
+    width: auto;
+}
+
+.img-rounded {
+    border-radius: 10px;
+}
+
+.set-box-price {
+    display: inline-block;
+    font-size: 24px;
+    bottom: 20px;
+    padding: 5px 10px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    border-radius: 0 12px 12px 0;
+    background: #5cb85c;
+    border-bottom: none;
+    border-left: none;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.addToCart {
+    background-color: #FFA726;
+    -moz-border-radius:42px;
+    -webkit-border-radius:42px;
+    border-radius:42px;
+    border: none;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    padding:10px 15px;
+    margin-left: auto;
+    margin-right: 5px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+.addToCart:hover {
+    background-color:#e6c700;
+}
+.addToCart:active {
+    position:relative;
+    top:1px;
+}
+
+.delete {
+    background-color: #ff2513;
+    -moz-border-radius:42px;
+    -webkit-border-radius:42px;
+    border-radius:42px;
+    border: none;
+    display:inline-block;
+    cursor:pointer;
+    color: #ffffff;
+    font-family:Arial;
+    font-size:20px;
+    padding:10px 15px;
+    margin-left: auto;
+    margin-right: 5px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+
+.delete:hover {
+    background-color: #941a0f;
+}
+
+.delete:active {
+    position:relative;
+    top:1px;
+}
