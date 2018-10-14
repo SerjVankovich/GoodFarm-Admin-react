@@ -1,38 +1,77 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
+import {Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem} from 'reactstrap'
 import './App.css';
 
 class App extends Component {
-  render() {
 
-    const style = {
-      backgroundColor: '#FFCA28'
+    constructor() {
+        super();
+
+        this.state = {
+            isOpen: false
+        };
+        this.toggle = this.toggle.bind(this)
     }
 
-    const linkStyle = {
-      backgroundColor: "#FFFFFF"
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
     }
 
-    return (
-      <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={style}>
-      <Link className="navbar-brand" to="/">GoodFarm</Link>
-      <button className="navbar-toggler" data-target="#my-nav" data-toggle="collapse">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div id="my-nav" className="collapse navbar-collapse">
-      <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <Link className="nav-link" to="/orders">Orders</Link>
-      </li>
-      <li className="nav-item active">
-        <Link className="nav-link" to="/users" >Users</Link>
-      </li>
-    </ul>
-        <span className="navbar-text">
-          <Link className="nav-link" to="/addSet" >Добавить набор</Link>
-        </span>
-      </div>
-      </nav>
+    render() {
+        return (
+            <div className="navbar-my">
+                    <Navbar light expand="md">
+                    <NavbarBrand href="/"><p className="brand">GoodFarm</p></NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                                <Link className="link" to="/users">Пользователи</Link>
+                                <Link className="link"  to="/orders">Заказы</Link>
+                            <UncontrolledDropdown nav inNavbar>
+                                <div className="link" >
+                                    <DropdownToggle nav caret>
+                                        Управление
+                                    </DropdownToggle>
+                                </div>
+
+                                <DropdownMenu right>
+                                    <DropdownItem>
+                                        <Link className="dropdownLink" to="/manageSets">Управление наборами</Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link className="dropdownLink" to="/manageMilk">Управление молоком</Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link className="dropdownLink" to="/manageBread">Управление хлебом</Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link className="dropdownLink" to="/manageMeat">Управление мясом</Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link className="dropdownLink" to="/manageVegFruits">Управление фруктами и овощами</Link>
+                                    </DropdownItem>
+                                    <DropdownItem divider />
+                                    <DropdownItem>
+                                        Reset
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
     );
   }
 }

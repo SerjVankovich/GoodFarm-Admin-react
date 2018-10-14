@@ -1,24 +1,22 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import {Col, Container, Jumbotron, Row} from 'reactstrap'
+import {Col, Container, Jumbotron, Row, Card, CardImg} from 'reactstrap'
 import "./ManageSets.css"
 import Loading from "../Loading/Loading";
 import Search from "../Search/Search";
+import plus from './plus.svg'
 
 class ManageSets extends React.Component {
     constructor() {
         super();
 
-        this.cartItems = [];
 
         this.state = {
             objs: [],
             loading: true,
-            cart: [],
+            error: null,
         };
 
-        this.saveToCart = this.saveToCart.bind(this);
-        this.checkObjOnCart = this.checkObjOnCart.bind(this);
         this.findObjs = this.findObjs.bind(this);
         this.deleteSet = this.deleteSet.bind(this)
     }
@@ -26,14 +24,19 @@ class ManageSets extends React.Component {
     componentDidMount() {
         const { url } = this.props;
         fetch(`http://localhost:3000/${url}`)
-            .then(response => response.json())
+            .then(response => response.ok ? response.json() : Promise.reject(response))
             .then(body =>
                 this.setState({
                     objs: body,
                     loading: false
                 })
             )
-            .catch(err => console.error(err));
+            .catch(err => {
+                this.setState({
+                    loading: false,
+                    error: err
+                });
+            });
     }
 
     findObjs(value) {
@@ -49,7 +52,12 @@ class ManageSets extends React.Component {
 
 
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                this.setState({
+                    error: err,
+                    loading: false
+                })
+            })
 
     }
 
@@ -57,9 +65,8 @@ class ManageSets extends React.Component {
         const { objs } = this.state;
         fetch(`http://localhost:3000/sets/deleteSet/${_id}`, {
             method: "DELETE",
-            headers: { Accept: "application/json" }
         })
-            .then(response => response.json())
+            .then(response => response.ok ? response.json() : Promise.reject(response))
             .then(body => {
                 console.log(body);
                 const deletesObj = objs.filter(obj => obj._id !== _id);
@@ -67,34 +74,28 @@ class ManageSets extends React.Component {
                     objs: deletesObj
                 })
             })
-            .catch(err => console.error(err))
-    }
-
-    saveToCart(obj) {
-        if(this.cartItems === null) {
-            this.cartItems = []
-        }
-        if (!this.checkObjOnCart(obj)) {
-            obj.count = 1;
-            this.cartItems.push(obj)
-        }
-
-    }
-
-    checkObjOnCart(obj) {
-        return this.cartItems.some(cartItem => {
-            return obj._id === cartItem._id;
-        })
-    }
-
-    componentWillUnmount() {
-        localStorage.setItem('cartItems', JSON.stringify(this.cartItems) )
+            .catch(err => {
+                console.log(err);
+                alert("Ошибка" + err.message)
+            })
     }
 
     render() {
-        const { objs, loading } = this.state;
+        const { objs, loading, error } = this.state;
         if (loading) {
             return (<Loading/>)
+        }
+
+        if (error) {
+            return (
+                <Container>
+                    <Jumbotron className="NotFound">
+                        <h2>Произошла ошибка: {error.message}</h2>
+
+                    </Jumbotron>
+                </Container>
+            )
+
         }
 
         if (objs.length === 0) {
@@ -129,6 +130,12 @@ class ManageSets extends React.Component {
                                     this)}
                             </Col>
                         ))}
+                        <Col>
+                            <Container className="AddButton">
+                                <img className="AddImg" src={plus} alt="plus"/>
+                            </Container>
+
+                        </Col>
                     </Row>}
                 </Container>
             </div>

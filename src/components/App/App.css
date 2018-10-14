@@ -26,3 +26,51 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.navbar-my {
+  background-color: #FFA726;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.brand {
+  display: inline;
+  font-size: larger;
+  color: #ffffff;
+}
+
+.brand:hover {
+  color: #dddddd;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link {
+  font-size: medium;
+  color: #ffffff;
+  margin: auto 1em;
+  font-weight: normal;
+}
+.dropdownLink {
+  font-size: medium;
+  color: #5f5f5f;
+  margin: auto 1em;
+  font-weight: normal;
+}
+
+.dropdownLink:hover {
+  color: #0b0b0b;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #dddddd;
+  text-decoration: none;
+
+}
+
+
+.navheight {
+  height: 4em;
+}

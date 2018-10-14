@@ -10,3 +10,31 @@ body {
     margin-top: 2em;
     align-content: center;
 }
+
+.AddButton {
+    width: content-box;
+    height: 400px;
+    background:    #ffffff;
+    border:        2px solid #3d85c6;
+    border-radius: 5px;
+    color:         #3d85c6;
+    display:       inline-block;
+    text-align:    center;
+    text-shadow:   none;
+}
+
+.AddButton:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+
+.AddImg {
+    height: 200px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
