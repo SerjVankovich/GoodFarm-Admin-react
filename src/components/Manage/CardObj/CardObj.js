@@ -1,9 +1,12 @@
 import React from 'react';
 import {Card, CardBody, CardTitle, CardImg, CardText, Button} from 'reactstrap'
-import {encode} from "../../../clearFunctions/clearFunctions";
 import SetModal from "./SetModal";
+import "./CardObj.css"
+import {Link} from "react-router-dom";
+import {translate} from "../Manage"
+import CardModal from "./CardModal";
 
-class SetCard extends React.Component {
+class CardObj extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -19,14 +22,9 @@ class SetCard extends React.Component {
     }
 
     render()  {
-        const { obj, saveToCart, deleteSet} = this.props;
+        const { obj, deleteObj, url, updateUrl} = this.props;
         const { modal } = this.state;
-        let imageUrl;
-        if (obj.image) {
-            imageUrl = "data:image/png;base64," + encode(obj.image.data);
-        } else {
-            imageUrl = ""
-        }
+        const imageUrl = translate(obj.image);
         return (
             <div>
                 <Card className="card" >
@@ -35,16 +33,26 @@ class SetCard extends React.Component {
                         <div className="set-box-price">{obj.price} руб.</div>
                         <CardTitle className="set-box-name">{obj.name}</CardTitle>
                         <CardText className="set-box-title">{obj.description}</CardText>
-                        <Button className="addToCart" onClick={() => {saveToCart(obj)}}>Изменить</Button>
-                        <Button className="delete" onClick={() => {deleteSet(obj)}}>Удалить</Button>
+                        <Link to={{
+                            pathname: updateUrl,
+                            state: obj
+                        }}><p className="addToCart">Изменить</p></Link>
+                        <Button className="delete" onClick={() => {deleteObj(obj)}}>Удалить</Button>
                     </CardBody>
                 </Card>
-                <SetModal toggleModal={this.toggleModal} saveToCart={saveToCart} modal={modal} obj={obj}/>
+                { url === "sets"
+                    ?
+                    <SetModal toggleModal={this.toggleModal}  modal={modal} obj={obj}/>
+                    :
+                    <CardModal toggleModal={this.toggleModal}  modal={modal} obj={obj}/>
+                }
+
             </div>
+
         )
     };
 
 
 }
 
-export default SetCard;
+export default CardObj;

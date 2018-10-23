@@ -11,9 +11,7 @@ class User extends React.Component {
 
     render() {
         const { user } = this.props;
-        const { compleated, active } = this.refs;
 
-        console.log(this.refs)
         return (
             <div className="col-lg-10 jumbotron user-card">
                 <h1>{user.name}</h1>

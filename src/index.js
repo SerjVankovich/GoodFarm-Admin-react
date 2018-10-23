@@ -11,8 +11,9 @@ import "bootstrap/dist/css/bootstrap-grid.min.css"
 import SuccessAdd from "./components/SuccessAdd/SuccessAdd";
 import Fail from "./components/Fail/Fail";
 import AddSimpleProduct from "./components/AddSimpleProduct/AddSimpleProduct";
-import ManageSets from "./components/ManageSets/ManageSets";
-import SetCard from "./components/ManageSets/SetCard/SetCard";
+import Manage from "./components/Manage/Manage";
+import CardObj from "./components/Manage/CardObj/CardObj";
+
 
 ReactDOM.render(
     <BrowserRouter>
@@ -25,6 +26,17 @@ ReactDOM.render(
             <Route path="/orders" component={Orders} exact/>
             <Route path="/users" component={Users} exact/>
             <Route path="/addSet" component={AddSet} exact/>
+            <Route path="/updateSet" component={
+                (props) => <AddSet {...props}
+                                   type="UPDATE"/>
+            }/>
+            <Route path="/successUpdateSet" component={
+                (props) => <SuccessAdd {...props}
+                                       title="Набор успешно обновлен"
+                                       link="/manageSets"
+                                       addMore="Вернуться обратно"
+                />
+            }/>
             <Route path="/fail" component={Fail}/>
             <Route path="/addMilk"
                    component={
@@ -110,9 +122,20 @@ ReactDOM.render(
 
             <Route path="/manageSets"
                    component={
-                       (props) => <ManageSets {...props}
-                                              component={SetCard}
-                                              url="sets" />
+                       (props) => <Manage {...props}
+                                          component={(props) => <CardObj {...props} updateUrl="/updateSet"/>}
+                                          url="sets"
+                                          delUrl="deleteSet"
+                                          addUrl="/addSet" />
+                   }
+            />
+            <Route path="/manageMilk"
+                   component={
+                       (props) => <Manage {...props}
+                                          component={(props) => <CardObj {...props} updateUrl="/updateMilk"/>}
+                                          delUrl="deleteMilk"
+                                          url="milk"
+                                          addUrl="addMilk"/>
                    }
             />
         </Switch>

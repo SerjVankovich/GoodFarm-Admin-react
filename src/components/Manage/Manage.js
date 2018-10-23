@@ -1,12 +1,13 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import {Col, Container, Jumbotron, Row, Card, CardImg} from 'reactstrap'
-import "./ManageSets.css"
+import {Link, withRouter} from 'react-router-dom';
+import {Col, Container, Jumbotron, Row} from 'reactstrap'
+import "./Manage.css"
 import Loading from "../Loading/Loading";
 import Search from "../Search/Search";
 import plus from './plus.svg'
+import {encode} from "../../clearFunctions/clearFunctions";
 
-class ManageSets extends React.Component {
+class Manage extends React.Component {
     constructor() {
         super();
 
@@ -18,7 +19,7 @@ class ManageSets extends React.Component {
         };
 
         this.findObjs = this.findObjs.bind(this);
-        this.deleteSet = this.deleteSet.bind(this)
+        this.deleteObj = this.deleteObj.bind(this)
     }
 
     componentDidMount() {
@@ -61,9 +62,10 @@ class ManageSets extends React.Component {
 
     }
 
-    deleteSet({ _id }) {
+    deleteObj({ _id }) {
+        const { url, delUrl } = this.state;
         const { objs } = this.state;
-        fetch(`http://localhost:3000/sets/deleteSet/${_id}`, {
+        fetch(`http://localhost:3000/${url}/${delUrl}/${_id}`, {
             method: "DELETE",
         })
             .then(response => response.ok ? response.json() : Promise.reject(response))
@@ -82,6 +84,7 @@ class ManageSets extends React.Component {
 
     render() {
         const { objs, loading, error } = this.state;
+        const { addUrl, url } = this.props;
         if (loading) {
             return (<Loading/>)
         }
@@ -123,16 +126,16 @@ class ManageSets extends React.Component {
                             <Col key={index} md="4" sm="6" xs="12">
                                 {React.createElement(this.props.component,
                                     {
-                                        saveToCart: this.saveToCart,
                                         obj: obj,
-                                        deleteSet: this.deleteSet
+                                        url: url,
+                                        deleteObj: this.deleteObj
                                     },
                                     this)}
                             </Col>
                         ))}
                         <Col>
                             <Container className="AddButton">
-                                <img className="AddImg" src={plus} alt="plus"/>
+                                <Link to={addUrl}><img className="AddImg" src={plus} alt="plus"/></Link>
                             </Container>
 
                         </Col>
@@ -144,4 +147,14 @@ class ManageSets extends React.Component {
     }
 }
 
-export default withRouter(ManageSets);
+export const translate = (image) => {
+    let imageUrl;
+    if (image) {
+        imageUrl = "data:image/png;base64," + encode(image.data);
+    } else {
+        imageUrl = ""
+    }
+    return imageUrl
+};
+
+export default withRouter(Manage);

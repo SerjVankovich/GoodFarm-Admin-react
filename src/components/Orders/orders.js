@@ -3,7 +3,6 @@ import { API } from "../../config";
 import { withRouter } from "react-router-dom";
 import Order from "./Order";
 import  Loading  from "../Loading/Loading";
-const request = require("request");
 
 const header = new Headers({
   "Access-Control-Allow-Origin": "*",
@@ -78,12 +77,6 @@ class Orders extends React.Component {
     const { orders } = this.state;
     orders.splice(id, 1);
 
-    const options = {
-      method: "DELETE",
-      json: {},
-      headers: header,
-      mode: "cors"
-    };
 
     fetch(API + `users/${order.userId}/deleteOrder/${order.id}`, {
       method: "DELETE",

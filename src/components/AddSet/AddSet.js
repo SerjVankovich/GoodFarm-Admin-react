@@ -6,29 +6,45 @@ import {encode} from "../../clearFunctions/clearFunctions";
 import Item from "../Item/Item";
 
 class AddSet extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            set: {
-                image: [],
-                name: "",
-                description: "",
-                price: "",
-                items: []
-            },
+    constructor(props){
+        super(props);
+        const { type, location: {state} } = props;
+        console.log(state);
 
-            validation: {
-                name: false,
-                description: false,
-                price: false,
-            },
+        if (!type) {
+            this.state = {
+                set: {
+                    image: [],
+                    name: "",
+                    description: "",
+                    price: "",
+                    items: []
+                },
 
-            buttonEnable: false,
+                validation: {
+                    name: false,
+                    description: false,
+                    price: false,
+                },
 
-            url: window.URL,
+                buttonEnable: false,
 
-            modalItem: false,
-        };
+                modalItem: false,
+            }
+        } else {
+            state.image = state.image.data;
+            this.state = {
+                set: state,
+                validation: {
+                    name: true,
+                    description: true,
+                    price: true,
+                },
+                buttonEnable: true,
+
+                modalItem: false
+            }
+        }
         this.handleChange = this.handleChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.fetchToServer = this.fetchToServer.bind(this);
@@ -44,6 +60,16 @@ class AddSet extends React.Component {
 
     fetchToServer() {
         const { set } = this.state;
+        const { type } = this.props;
+
+        if (type === "UPDATE") {
+            this.putData(set)
+        } else {
+            this.postData(set)
+        }
+    }
+
+    postData(set) {
         fetch("http://localhost:3000/sets/createSet",  {
             method: "POST",
             headers: {
@@ -63,6 +89,28 @@ class AddSet extends React.Component {
                 this.props.history.push({ pathname: '/fail', state: { error: err.message, backTo: "/addSet" }});
             })
     }
+
+    putData(set){
+        fetch(`http://localhost:3000/sets/updateSet/${set._id}`,  {
+            method: "PUT",
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(set)
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(body => {
+                console.log(body);
+                if (body._id === set._id) {
+                    this.props.history.push('/successUpdateSet')
+                }
+            })
+            .catch(err => {
+                this.props.history.push({ pathname: '/fail', state: { error: err.message, backTo: "/updateSet" }});
+            })
+    }
+
 
     handleTextChange(event) {
         const key = event.target.id;
@@ -177,5 +225,6 @@ class AddSet extends React.Component {
         )
     }
 }
+
 
 export default AddSet;
