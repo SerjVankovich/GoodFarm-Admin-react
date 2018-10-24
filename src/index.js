@@ -48,6 +48,25 @@ ReactDOM.render(
                        />
                    }
             />
+            <Route path="/updateMilk"
+                   component={
+                       (props) => <AddSimpleProduct {...props}
+                                                    title="Обновите молочный продукт"
+                                                    type="UPDATE"
+                                                    urlUpdate="http://localhost:3000/milk/updateMilk"
+                                                    backTo="/manageMilk"
+                                                    goTo="/successUpdateMilk"
+                       />
+                   }
+            />
+
+            <Route path="/successUpdateMilk" component={
+                (props) => <SuccessAdd {...props}
+                                       title="Молочный продукт успешно обновлен"
+                                       link="/manageMilk"
+                                       addMore="Вернуться обратно"
+                />
+            }/>
             <Route path="/addBread"
                    component={
                        (props) => <AddSimpleProduct {...props}

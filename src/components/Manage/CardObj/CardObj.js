@@ -31,7 +31,7 @@ class CardObj extends React.Component {
                     <CardImg className="img-rounded pointer" onClick={this.toggleModal} top width="100%" src={imageUrl} alt="Set image"/>
                     <CardBody>
                         <div className="set-box-price">{obj.price} руб.</div>
-                        <CardTitle className="set-box-name">{obj.name}</CardTitle>
+                        <CardTitle className="set-box-name">{obj.title || obj.name}</CardTitle>
                         <CardText className="set-box-title">{obj.description}</CardText>
                         <Link to={{
                             pathname: updateUrl,

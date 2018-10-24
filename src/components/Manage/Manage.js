@@ -63,7 +63,7 @@ class Manage extends React.Component {
     }
 
     deleteObj({ _id }) {
-        const { url, delUrl } = this.state;
+        const { url, delUrl } = this.props;
         const { objs } = this.state;
         fetch(`http://localhost:3000/${url}/${delUrl}/${_id}`, {
             method: "DELETE",

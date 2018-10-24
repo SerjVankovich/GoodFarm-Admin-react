@@ -5,29 +5,48 @@ import {encode} from "../../clearFunctions/clearFunctions";
 
 
 class AddSimpleProduct extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            obj: {
-                title:       '',
-                price:       '',
-                description: '',
-                consist:     '',
-                quantity:    '',
-                image:       []
-            },
+    constructor(props) {
+        super(props);
 
-            validation: {
-                title:       false,
-                price:       false,
-                description: false,
-                consist:     false,
-                quantity:    false,
-                image:       false
-            },
+        const { type, location: {state} } = props;
 
-            buttonEnable: false
-        };
+        if (!type) {
+            this.state = {
+                obj: {
+                    title: '',
+                    price: '',
+                    description: '',
+                    consist: '',
+                    quantity: '',
+                    image: []
+                },
+
+                validation: {
+                    title: false,
+                    price: false,
+                    description: false,
+                    consist: false,
+                    quantity: false,
+                    image: false
+                },
+
+                buttonEnable: false
+            };
+        } else {
+            state.image = state.image.data;
+            this.state = {
+                obj: state,
+                validation: {
+                    title: true,
+                    price: true,
+                    description: !state.description,
+                    consist: !state.consist,
+                    quantity: state.quantity.length > 2,
+                    image: state.image.length > 0
+                },
+                buttonEnable: true
+            }
+        }
 
         this.handleTextChange = this.handleTextChange.bind(this);
         this.fetchToServer = this.fetchToServer.bind(this);
@@ -35,8 +54,19 @@ class AddSimpleProduct extends React.Component {
     }
 
     fetchToServer() {
-        const { url, backTo, goTo } = this.props;
+        const { url, backTo, goTo, urlUpdate } = this.props;
         const { obj } = this.state;
+
+        const { type } = this.props;
+        if (type === "UPDATE") {
+            this.putData(urlUpdate, obj, goTo, backTo)
+        } else {
+            this.postData(url, obj, goTo, backTo)
+        }
+
+    }
+
+    postData(url, obj, goTo, backTo) {
         fetch(url,  {
             method: "POST",
             headers: {
@@ -51,6 +81,24 @@ class AddSimpleProduct extends React.Component {
                 if (body.message === "Added successfully") {
                     this.props.history.push(goTo)
                 }
+            })
+            .catch(err => {
+                this.props.history.push({ pathname: '/fail', state: { error: err.message, backTo }});
+            })
+    }
+
+    putData(url, obj, goTo, backTo) {
+        fetch(url + `/${obj._id}`,  {
+            method: "PUT",
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(() => {
+                    this.props.history.push(goTo)
             })
             .catch(err => {
                 this.props.history.push({ pathname: '/fail', state: { error: err.message, backTo }});
@@ -118,7 +166,7 @@ class AddSimpleProduct extends React.Component {
                     <hr/>
                     <FormGroup>
                         <Label>Название продукта</Label>
-                        <Input valid={validation.title} invalid={!validation.title} id="title" value={obj.name} onChange={this.handleTextChange} placeholder="Введите название продукта" type="text"/>
+                        <Input valid={validation.title} invalid={!validation.title} id="title" value={obj.name || obj.title} onChange={this.handleTextChange} placeholder="Введите название продукта" type="text"/>
                     </FormGroup>
                     <hr/>
                     <FormGroup>
