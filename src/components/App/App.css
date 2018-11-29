@@ -50,6 +50,7 @@
   color: #ffffff;
   margin: auto 1em;
   font-weight: normal;
+  font-family: Arial, serif;
 }
 .dropdownLink {
   font-size: medium;
@@ -67,7 +68,6 @@
 .link:hover {
   color: #dddddd;
   text-decoration: none;
-
 }
 
 

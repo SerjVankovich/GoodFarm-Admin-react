@@ -33,10 +33,7 @@ class CardObj extends React.Component {
                         <div className="set-box-price">{obj.price} руб.</div>
                         <CardTitle className="set-box-name">{obj.title || obj.name}</CardTitle>
                         <CardText className="set-box-title">{obj.description}</CardText>
-                        <Link to={{
-                            pathname: updateUrl,
-                            state: obj
-                        }}><p className="addToCart">Изменить</p></Link>
+                        <Link to={{pathname: updateUrl, state: obj}}><p className="addToCart">Изменить</p></Link>
                         <Button className="delete" onClick={() => {deleteObj(obj)}}>Удалить</Button>
                     </CardBody>
                 </Card>

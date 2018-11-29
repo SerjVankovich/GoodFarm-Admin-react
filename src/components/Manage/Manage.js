@@ -134,9 +134,12 @@ class Manage extends React.Component {
                             </Col>
                         ))}
                         <Col>
-                            <Container className="AddButton">
-                                <Link to={addUrl}><img className="AddImg" src={plus} alt="plus"/></Link>
-                            </Container>
+                            <Link to={addUrl}>
+                                <Container className="AddButton">
+                                    <img className="AddImg" src={plus} alt="plus"/>
+                                </Container>
+                            </Link>
+
 
                         </Col>
                     </Row>}

@@ -8,155 +8,55 @@ import HomePage from './components/HomePage/HomePage';
 import Users from './components/Users/users';
 import AddSet from "./components/AddSet/AddSet";
 import "bootstrap/dist/css/bootstrap-grid.min.css"
-import SuccessAdd from "./components/SuccessAdd/SuccessAdd";
 import Fail from "./components/Fail/Fail";
-import AddSimpleProduct from "./components/AddSimpleProduct/AddSimpleProduct";
-import Manage from "./components/Manage/Manage";
-import CardObj from "./components/Manage/CardObj/CardObj";
+import {AddMilk, SuccessAddMilk} from "./routes/milk/AddMilk";
+import { UpdateMilk, SuccessUpdateMilk} from "./routes/milk/UpdateMilk";
+import {ManageMilk} from "./routes/milk/ManageMilk";
+import {AddBread, SuccessAddBread} from "./routes/bread/AddBread";
+import {AddMeat, SuccessAddMeat} from "./routes/meat/AddMeat";
+import {AddVegFruits, SuccessAddVegFruits} from "./routes/vegFruits/AddVegFruits";
+import {SuccessUpdateSets, UpdateSets} from "./routes/sets/UpdateSets";
+import {SuccessAddSets} from "./routes/sets/AddSets";
+import {ManageSets} from "./routes/sets/ManageSets";
 
 
 ReactDOM.render(
     <BrowserRouter>
         <div>
-
         <App />
-
         <Switch>
+            {/* router */}
             <Route path="/" component={HomePage} exact />
-            <Route path="/orders" component={Orders} exact/>
-            <Route path="/users" component={Users} exact/>
-            <Route path="/addSet" component={AddSet} exact/>
-            <Route path="/updateSet" component={
-                (props) => <AddSet {...props}
-                                   type="UPDATE"/>
-            }/>
-            <Route path="/successUpdateSet" component={
-                (props) => <SuccessAdd {...props}
-                                       title="Набор успешно обновлен"
-                                       link="/manageSets"
-                                       addMore="Вернуться обратно"
-                />
-            }/>
+            <Route path="/orders" component={Orders} exact />
+            <Route path="/users" component={Users} exact />
             <Route path="/fail" component={Fail}/>
-            <Route path="/addMilk"
-                   component={
-                       (props) => <AddSimpleProduct {...props}
-                                                    title="Добавьте молочный продукт"
-                                                    url='http://localhost:3000/milk/createMilk'
-                                                    backTo="/addMilk"
-                                                    goTo="/successAddMilk"
-                       />
-                   }
-            />
-            <Route path="/updateMilk"
-                   component={
-                       (props) => <AddSimpleProduct {...props}
-                                                    title="Обновите молочный продукт"
-                                                    type="UPDATE"
-                                                    urlUpdate="http://localhost:3000/milk/updateMilk"
-                                                    backTo="/manageMilk"
-                                                    goTo="/successUpdateMilk"
-                       />
-                   }
-            />
 
-            <Route path="/successUpdateMilk" component={
-                (props) => <SuccessAdd {...props}
-                                       title="Молочный продукт успешно обновлен"
-                                       link="/manageMilk"
-                                       addMore="Вернуться обратно"
-                />
-            }/>
-            <Route path="/addBread"
-                   component={
-                       (props) => <AddSimpleProduct {...props}
-                                                    title="Добавьте хлебный продукт"
-                                                    url='http://localhost:3000/bread/createBread'
-                                                    backTo="/addBread"
-                                                    goTo="/successAddBread"
-                       />
-                   }
-            />
-            <Route path="/addMeat"
-                   component={
-                       (props) => <AddSimpleProduct {...props}
-                                                    title="Добавьте мясной или рыбный продукт"
-                                                    url='http://localhost:3000/meat/createMeat'
-                                                    backTo="/addMeat"
-                                                    goTo="/successAddMeat"
-                       />
-                   }
-            />
-            <Route path="/addVegFruits"
-                   component={
-                       (props) => <AddSimpleProduct {...props}
-                                                    title="Добавьте овощи или фрукты"
-                                                    url='http://localhost:3000/vegFruits/createVegFruit'
-                                                    backTo="/addVegFruits"
-                                                    goTo="/successAddVegFruits"
-                       />
-                   }
-            />
-            <Route path="/successAddSet"
-                   component={
-                       (props) => <SuccessAdd {...props}
-                                              title="Набор успешно добавлен"
-                                              link="/addSet"
-                                              addMore="Добавить ещё набор"
-                       />}
-            />
-            <Route path="/successAddMilk"
-                   component={
-                       (props) => <SuccessAdd {...props}
-                                              title="Молочный продукт успешно добавлен"
-                                              link="/addMilk"
-                                              addMore="Добавить ещё молочный продукт"/>}
-            />
-            <Route path="/successAddMeat"
-                   component={
-                       (props) => <SuccessAdd {...props}
-                                              title="Мясной или рыбный продукт успешно добавлен"
-                                              link="/addMeat"
-                                              addMore="Добавить ещё мясной или рыбный продукт"/>
-                   }
-            />
+            {/* Sets router */}
+            <Route path="/manageSets" component={ManageSets} />
+            <Route path="/addSet" component={AddSet} exact />
+            <Route path="/successAddSet" component={SuccessAddSets} />
+            <Route path="/updateSet" component={UpdateSets} />
+            <Route path="/successUpdateSet" component={SuccessUpdateSets}/>
 
-            <Route path="/successAddBread"
-                   component={
-                       (props) => <SuccessAdd {...props}
-                                              title="Хлебный продукт успешно добавлен"
-                                              link="/addBread"
-                                              addMore="Добавить ещё хлебный продукт"/>
-                   }
-            />
+            {/* Milk router */}
+            <Route path="/manageMilk" component={ManageMilk}/>
+            <Route path="/addMilk" component={AddMilk}/>
+            <Route path="/successAddMilk" component={ SuccessAddMilk }/>
+            <Route path="/updateMilk" component={UpdateMilk}/>
+            <Route path="/successUpdateMilk" component={ SuccessUpdateMilk }/>
 
-            <Route path="/successAddVegFruits"
-                   component={
-                       (props) => <SuccessAdd {...props}
-                                              title="Растительный продукт успешно добавлен"
-                                              link="/addVegFruits"
-                                              addMore="Добавить ещё растительный продукт"/>
-                   }
-            />
+            {/* Bread router */}
+            <Route path="/addBread" component={AddBread} />
+            <Route path="/successAddBread" component={SuccessAddBread} />
 
-            <Route path="/manageSets"
-                   component={
-                       (props) => <Manage {...props}
-                                          component={(props) => <CardObj {...props} updateUrl="/updateSet"/>}
-                                          url="sets"
-                                          delUrl="deleteSet"
-                                          addUrl="/addSet" />
-                   }
-            />
-            <Route path="/manageMilk"
-                   component={
-                       (props) => <Manage {...props}
-                                          component={(props) => <CardObj {...props} updateUrl="/updateMilk"/>}
-                                          delUrl="deleteMilk"
-                                          url="milk"
-                                          addUrl="addMilk"/>
-                   }
-            />
+            {/* Meat router */}
+            <Route path="/addMeat" component={AddMeat} />
+            <Route path="/successAddMeat" component={SuccessAddMeat} />
+
+            {/* VegFruit router */}
+            <Route path="/addVegFruits" component={AddVegFruits} />
+            <Route path="/successAddVegFruits" component={SuccessAddVegFruits}/>
+
         </Switch>
         </div>
 

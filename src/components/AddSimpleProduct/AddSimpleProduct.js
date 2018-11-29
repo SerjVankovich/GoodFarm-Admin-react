@@ -8,6 +8,7 @@ class AddSimpleProduct extends React.Component {
     constructor(props) {
         super(props);
 
+        console.log(this.props.location.state);
         const { type, location: {state} } = props;
 
         if (!type) {
@@ -150,7 +151,7 @@ class AddSimpleProduct extends React.Component {
     }
 
     render() {
-        const {title} = this.props;
+        const {title, type} = this.props;
         const { obj, validation } = this.state;
         const file = "data:image/png;base64," + encode(obj.image);
         return (
@@ -188,7 +189,7 @@ class AddSimpleProduct extends React.Component {
                         <Label>Цена</Label>
                         <Input valid={validation.price} invalid={!validation.price} id="price" value={obj.price} onChange={this.handleTextChange} placeholder="Введите цену набора (в рублях)" type="number"/>
                     </FormGroup>
-                    <Button className="addBtn" onClick={this.fetchToServer} disabled={!this.state.buttonEnable} color="success">Добавить</Button>
+                    <Button className="addBtn" onClick={this.fetchToServer} disabled={!this.state.buttonEnable} color="success">{(() => !type ? "Добавить" : "Изменить")()}</Button>
 
                 </Form>
             </Container>

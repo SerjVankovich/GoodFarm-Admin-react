@@ -174,12 +174,13 @@ class AddSet extends React.Component {
 
     render() {
 
+        const { type } = this.props;
         const { set, validation } = this.state;
         const file = "data:image/png;base64," + encode(set.image);
 
         return (
             <Container>
-                <h1 className="center">Добавьте набор</h1>
+                <h1 className="center">{(() => !type ? "Добавьте набор" : "Измените набор")()}</h1>
                 <hr/>
                 <Form>
                     <FormGroup>
@@ -213,7 +214,7 @@ class AddSet extends React.Component {
                         </Container>
                         )) : <p>No items</p>}
                     <Button className="addItemBtn" onClick={this.toggleModal}>+ продукт</Button>
-                    <Button className="addBtn" onClick={this.fetchToServer} disabled={!this.state.buttonEnable} color="success">Добавить</Button>
+                    <Button className="addBtn" onClick={this.fetchToServer} disabled={!this.state.buttonEnable} color="success">{(() => !type ? "Добавить" : "Изменить")()}</Button>
 
                 </Form>
                 <AddItem modal={this.state.modalItem} toggleModal={this.toggleModal} addItem={this.addItem}/>
